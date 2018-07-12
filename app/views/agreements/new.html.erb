@@ -1,0 +1,16 @@
+<%= simple_form_for [@agreement_template, @agreement] do |f| %>
+  <%= f.input :name %>
+      <%= f.simple_fields_for :agreement_answer do |p| %>
+  <% @agreement_template.questions.each do |quest| %>
+        <p><%= quest.title %></p>
+          <%= p.input :answer, collection: quest.answers, as: :check_boxes %>
+        <%# quest.answers.each do |x| %>
+
+          <%#= x.title %>
+        <%# end %>
+  <% end %>
+      <% end %>
+
+    <%= f.submit %>
+<% end %>
+

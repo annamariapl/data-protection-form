@@ -10,9 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_07_12_171701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "agreement_answers", force: :cascade do |t|
+    t.bigint "answer_id"
+    t.bigint "agreement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agreement_id"], name: "index_agreement_answers_on_agreement_id"
+    t.index ["answer_id"], name: "index_agreement_answers_on_answer_id"
+  end
+
+  create_table "agreement_templates", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "agreements", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id"
+    t.string "title"
+    t.string "sentence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "agreement_template_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agreement_template_id"], name: "index_questions_on_agreement_template_id"
+  end
+
+  add_foreign_key "agreement_answers", "agreements"
+  add_foreign_key "agreement_answers", "answers"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "agreement_templates"
 end
