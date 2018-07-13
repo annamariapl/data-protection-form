@@ -1,16 +1,25 @@
-<%= simple_form_for [@agreement_template, @agreement] do |f| %>
-  <%= f.input :name %>
-      <%= f.simple_fields_for :agreement_answer do |p| %>
-  <% @agreement_template.questions.each do |quest| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+
+
+        <%= simple_form_for [@agreement_template, @agreement] do |f| %>
+        <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
+        <%= f.simple_fields_for :agreement_answer do |p| %>
+        <% @agreement_template.questions.each do |quest| %>
         <p><%= quest.title %></p>
-          <%= p.input :answer, collection: quest.answers, as: :check_boxes %>
+        <%= p.input :answer, collection: quest.answers, as: :check_boxes %>
         <%# quest.answers.each do |x| %>
 
-          <%#= x.title %>
+        <%#= x.title %>
         <%# end %>
-  <% end %>
-      <% end %>
+        <% end %>
+        <% end %>
 
-    <%= f.submit %>
-<% end %>
+        <%= f.submit %>
+        <% end %>
 
+      </div>
+    </div>
+  </div>
