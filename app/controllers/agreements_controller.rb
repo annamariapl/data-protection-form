@@ -1,14 +1,6 @@
+require 'securerandom'
+
 class AgreementsController < ApplicationController
-
-  def show
-    @agreement = Agreement.find(params[:id])
-
-    # @h1_text = 'John Dugan'
-
-    respond_to do |format|
-      format.docx { headers["Content-Disposition"] = "attachment; filename=\"hk2-testing_checkboxes.docx\"" }
-    end
-  end
 
   def new
     @agreement_template = AgreementTemplate.first
@@ -24,6 +16,27 @@ class AgreementsController < ApplicationController
     end
     # Create all the AgreementAnswer from the answer selected
     redirect_to agreement_url(@agreement)
+  end
+
+  def show
+    @agreement = Agreement.find(params[:id])
+    build_and_send_docx
+  end
+
+  def build_and_send_docx
+    file = "/tmp/" + SecureRandom.uuid + ".docx"
+
+    Caracal::Document.save(file) do |docx|
+      docx.page
+      docx.h1 'Introduction'
+      docx.hr
+      docx.h2 'Overview'
+      docx.p 'Caracal is a pure Ruby library for generating dynamic Microsoft Word documents. While the library does not support the entire Open XML specification, most common Word features are available.'
+      docx.p
+      docx.p 'Major features include:'
+    end
+
+    UserMailer.report("." + file).deliver_now
   end
 
   private
