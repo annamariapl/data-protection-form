@@ -2,3 +2,7 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+# Mime::Type.register "application/docx", :docx
+
+# Add mime-type in /config/initializers/mime_types.rb:
+Mime::Type.register "application/vnd.openxmlformats-officedocument.wordprocessingml.document", :docx

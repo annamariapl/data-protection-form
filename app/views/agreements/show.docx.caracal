@@ -1,0 +1,8 @@
+docx.page
+docx.h1 'Introduction'
+docx.hr
+
+docx.h2 'Overview'
+docx.p 'Caracal is a pure Ruby library for generating dynamic Microsoft Word documents. While the library does not support the entire Open XML specification, most common Word features are available.'
+docx.p
+docx.p 'Major features include:'
