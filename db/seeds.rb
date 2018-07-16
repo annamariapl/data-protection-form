@@ -14,22 +14,49 @@ end
 require "open-uri"
 require "yaml"
 
+
+chapters_attributes = [
+  {
+    title: "Verschlüsselung und Pseudonymisierung personenbezogener Daten"
+    },
+  {
+    title: "Vertrauligkeit und Integrität"
+    },
+  {
+    title: "Zutrittskontolle"
+    },
+  {
+    title: "Zugangskontorolle"
+    },
+  {
+    title: "Zugriffskontrolle"
+    },
+  {
+    title: "Übertragungskontrolle"
+    },
+  {
+    title: "Transportkontrolle"
+  }
+]
+
 template = AgreementTemplate.create(title: "TOM")
 seed_file = "db/seed_file.yml"
 sample = YAML.load(open(seed_file).read)
 
-
+puts "Creating chapters..."
+chapter = Chapter.create!(chapters_attributes)
+puts "Chapters created (from an array in --- seed.rb)"
 
 puts 'Creating questions...'
 # questions = {}
 sample["questions"].each do |question|
-	q = Question.create! question.slice("title").merge(agreement_template: template)
+	q = Question.create! question.slice("title", "chapter_id").merge(agreement_template: template)
 	puts 'Creating answers'
 	sample["answers"].each do |answer|
 		if q.id == answer.first.second
 			Answer.create! answer.slice("title", "sentence", "pointing").merge(question: q)
 		end
-	end	
+	end
 end
 
 puts 'Finished!'
@@ -50,11 +77,11 @@ sample["questions"].each do |question|
 		puts "#{sample["answers"].first}"
 		puts "#{sample["answers"].second}"
 		Answer.create! answer.slice("title", "sentence").merge(question: q)
-	end	
+	end
 end
 
 puts 'Finished!'
-	
+
 =end
 
 
@@ -70,7 +97,7 @@ sample["questions"].each do |question|
 		if q.id == answer.first.second
 			Answer.create! answer.slice("title", "sentence").merge(question: q)
 		end
-	end	
+	end
 end
 
 puts 'Finished!'

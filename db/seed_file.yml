@@ -1,16 +1,20 @@
 # Bitte mit # Kommentare einfügen (Frage Nummer)
-# Bitte AUF KEINEM FALL struktur von YML (space, tabs) verändern. YML ist sehr streng damit. 
+# Bitte AUF KEINEM FALL struktur von YML (space, tabs) verändern. YML ist sehr streng damit.
 # No need to have a question_number /sequence/ (create complate db form seed file ALWAYS)
 questions:
-  - title: "Verschlüssung?" #1
-  - title: "Verschlüsung von welchen Geräten?" #2
-  - title: "Frage Nummer 3" #3
-  - title: "Frage Nummer 4" #4 
+  - title: "Verschlüssung?"
+    chapter_id: 1
+  - title: "Verschlüsung von welchen Geräten?"
+    chapter_id: 1
+  - title: "Frage Nummer 3"
+    chapter_id: 1
+  - title: "Frage Nummer 4"
+    chapter_id: 1
 
-    
+
 answers:
   - question_id: 1
-    title: "125" 
+    title: "125"
     sentence: "in this comapny was used 125 verschlüssung"
     pointing: 0
   - question_id: 1
