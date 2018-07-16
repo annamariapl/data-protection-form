@@ -27,7 +27,7 @@ sample["questions"].each do |question|
 	puts 'Creating answers'
 	sample["answers"].each do |answer|
 		if q.id == answer.first.second
-			Answer.create! answer.slice("title", "sentence").merge(question: q)
+			Answer.create! answer.slice("title", "sentence", "pointing").merge(question: q)
 		end
 	end	
 end

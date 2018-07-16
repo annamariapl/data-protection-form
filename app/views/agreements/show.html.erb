@@ -1,13 +1,23 @@
-  <div class="container">
+  <!-- <div class="container">
   	<div class="row">
   		<div class="col-xs-12 col-sm-6 col-sm-offset-3">
-  			<% @agreement.answers.each do |a| %>
-  			<p><%= a.sentence %></p>
-  			<% end %>
-  			<div> <h2>HIER WIRD BERWERTUNG :</h2>
-  				<p>Punkte? Mit M.H.</p>
-  				<p>email  wurde versandt</p>
+  			<#% @agreement.answers.each do |a| %>
+  			<p><#%= a.sentence %></p>
+  			<#% end %>
   			</div>
   		</div>
   	</div>
+  </div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <% max_score = 12 %>
+        <% sum = @agreement.answers.sum(:pointing) %>
+        <% display_percent_sum = (sum*100)/max_score %>
+        <p> Die Maßnahmen erfüllen Standarten in <%= display_percent_sum %> % </p>
+        <p> Wir beraten sie gerne: <%= mail_to "annamaria.wojtyga@gmail.com", name = "Schrieben Sie uns eine Email", subject:"hk2 - TOM : firma:", body:"Bitte um Kontakt wegen AV, TOM Anlage. <br> Name <br> Telefon" %></p>
+      </div>
+    </div>
   </div>
+

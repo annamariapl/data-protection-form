@@ -12,15 +12,20 @@ answers:
   - question_id: 1
     title: "125" 
     sentence: "in this comapny was used 125 verschlüssung"
+    pointing: 0
   - question_id: 1
     title: "256"
     sentence: "in this comapny was used 256 verschlüssung"
+    pointing: 2
   - question_id: 1
     title: "keine"
     sentence: "aKEINE VERSCHLÜSSUNG"
+    pointing: -3
   - question_id: 2
     title: "Handy"
     sentence: "In /firma/ würden Hnady mit /verschlüssung/ verschlüsselt"
+    pointing: 0
   - question_id: 3
     title: "Anstwort 1 to Question 3"
     sentence: "Anstwort 1 to Question 3 - Satz zum ergänzen"
+    pointing: 1
