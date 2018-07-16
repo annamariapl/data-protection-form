@@ -2,13 +2,13 @@
 # Bitte AUF KEINEM FALL struktur von YML (space, tabs) verändern. YML ist sehr streng damit.
 # No need to have a question_number /sequence/ (create complate db form seed file ALWAYS)
 questions:
-  - title: "Verschlüssung?"
+  - title: "Verschlüsselung Datenbank"
     chapter_id: 1
-  - title: "Verschlüsung von welchen Geräten?"
+  - title: "Verschlüsselung mobile Endgeräte"
     chapter_id: 1
-  - title: "Frage Nummer 3"
+  - title: "Transport Verschlüsselung"
     chapter_id: 1
-  - title: "Frage Nummer 4"
+  - title: "Pseudonymisierung"
     chapter_id: 1
 
 

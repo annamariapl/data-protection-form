@@ -1,14 +1,20 @@
+ <div class="new-agreement-container">
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+ <h3>Technische und organisatorische Maßnahmen nach Art. 32 DSGVO</h3>
+      <br>
+
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
 
-      <div class="new-agreement-container">
+
             <%= simple_form_for [@agreement_template, @agreement] do |f| %>
             <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
+            <br>
             <%= f.simple_fields_for :agreement_answer do |chosen_answers| %>
             <% @chapters.each do |chapter| %>
              <h4 class="chapter-title"> <!-- <#%= chapter.id %> - --> <%= chapter.title %></h4>
+             <p class="chapter-unter_titel"><%= chapter.unter_titel %></p>
             <% @agreement_template.questions.each do |quest| %>
             <% if chapter.id == quest.chapter_id %>
             <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
@@ -18,7 +24,7 @@
             <% end %>
             <% end %>
 
-            <%= f.submit %>
+            <%= f.submit "CLICK - TOM überprüfen", class: "btn btn-danger" %>
             <% end %>
       </div>
     </div>
