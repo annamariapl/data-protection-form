@@ -17,7 +17,8 @@ require "yaml"
 
 chapters_attributes = [
   {
-    title: "Verschlüsselung und Pseudonymisierung personenbezogener Daten"
+    title: "Verschlüsselung und Pseudonymisierung personenbezogener Daten",
+    # unter_titel: "Gewärleistung, dass personenbezogene Daten im System nur in einer Weise gespeichert werden, die Dritten die Zuordnung zum Betroffenen nicht ermöglicht"
     },
   {
     title: "Vertrauligkeit und Integrität"

@@ -8,10 +8,10 @@
             <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
             <%= f.simple_fields_for :agreement_answer do |chosen_answers| %>
             <% @chapters.each do |chapter| %>
-             <h4 class="chapter-title"><%= chapter.title %></h4>
+             <h4 class="chapter-title"> <!-- <#%= chapter.id %> - --> <%= chapter.title %></h4>
             <% @agreement_template.questions.each do |quest| %>
             <% if chapter.id == quest.chapter_id %>
-            <h5 class="question-title"><%= quest.title %></h5>
+            <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
             <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes %>
             <% end %>
             <% end %>
