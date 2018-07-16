@@ -4,6 +4,7 @@ class AgreementsController < ApplicationController
 
   def new
     @agreement_template = AgreementTemplate.first
+    @chapters = Chapter.all
     @agreement = Agreement.new
   end
 

@@ -1,25 +1,29 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
 
+      <div class="new-agreement-container">
+            <%= simple_form_for [@agreement_template, @agreement] do |f| %>
+            <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
+            <%= f.simple_fields_for :agreement_answer do |chosen_answers| %>
+            <% @chapters.each do |chapter| %>
+             <h4 class="chapter-title"><%= chapter.title %></h4>
+            <% @agreement_template.questions.each do |quest| %>
+            <% if chapter.id == quest.chapter_id %>
+            <h5 class="question-title"><%= quest.title %></h5>
+            <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes %>
+            <% end %>
+            <% end %>
+            <% end %>
+            <% end %>
 
-        <%= simple_form_for [@agreement_template, @agreement] do |f| %>
-        <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
-        <%= f.simple_fields_for :agreement_answer do |p| %>
-        <% @agreement_template.questions.each do |quest| %>
-        <p><%= quest.title %></p>
-        <%= p.input :answer, collection: quest.answers, as: :check_boxes %>
-        <%# quest.answers.each do |x| %>
-
-        <%#= x.title %>
-        <%# end %>
-        <% end %>
-        <% end %>
-
-        <%= f.submit %>
-        <% end %>
-
+            <%= f.submit %>
+            <% end %>
       </div>
     </div>
   </div>
+</div>
+
+
+
