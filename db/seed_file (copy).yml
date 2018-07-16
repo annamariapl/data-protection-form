@@ -1,0 +1,15 @@
+questions:
+  - title: "Question1"
+  - title: "Question2"
+  - title: "Question3"
+    
+answers:
+  - question_id: 1
+    title: "A" 
+    sentence: "in this comapny was used an answer#{tile}"
+  - question_id: 1
+    title: "B"
+    sentence: "in this comapny was used an answer#{tile}"
+  - question_id: 2
+    title: "C"
+    sentence: "answer#{tile}"

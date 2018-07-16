@@ -1,3 +1,4 @@
+=begin
 
 at = AgreementTemplate.create(title: "hello")
 
@@ -7,3 +8,70 @@ at = AgreementTemplate.create(title: "hello")
     a = Answer.create(question: q, title: "Answer #{i}", sentence: "Sentence #{i}")
   end
 end
+
+=end
+
+require "open-uri"
+require "yaml"
+
+template = AgreementTemplate.create(title: "TOM")
+seed_file = "db/seed_file.yml"
+sample = YAML.load(open(seed_file).read)
+
+
+
+puts 'Creating questions...'
+# questions = {}
+sample["questions"].each do |question|
+	q = Question.create! question.slice("title").merge(agreement_template: template)
+	puts 'Creating answers'
+	sample["answers"].each do |answer|
+		if q.id == answer.first.second
+			Answer.create! answer.slice("title", "sentence").merge(question: q)
+		end
+	end	
+end
+
+puts 'Finished!'
+
+
+
+=begin
+
+
+puts 'Creating questions...'
+# questions = {}
+sample["questions"].each do |question|
+	q = Question.create! question.slice("title").merge(agreement_template: template)
+	puts 'Creating answers'
+	sample["answers"].each do |answer|
+		# puts "#{q.id}"
+		puts "#{answer.first.second}" #question_id
+		puts "#{sample["answers"].first}"
+		puts "#{sample["answers"].second}"
+		Answer.create! answer.slice("title", "sentence").merge(question: q)
+	end	
+end
+
+puts 'Finished!'
+	
+=end
+
+
+
+
+=begin
+puts 'Creating questions...'
+# questions = {}
+sample["questions"].each do |question|
+	q = Question.create! question.slice("title").merge(agreement_template: template)
+	puts 'Creating answers'
+	sample["answers"].each do |answer|
+		if q.id == answer.first.second
+			Answer.create! answer.slice("title", "sentence").merge(question: q)
+		end
+	end	
+end
+
+puts 'Finished!'
+=end

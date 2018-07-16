@@ -27,13 +27,14 @@ class AgreementsController < ApplicationController
     file = "/tmp/" + SecureRandom.uuid + ".docx"
 
     Caracal::Document.save(file) do |docx|
-      docx.page
-      docx.h1 'Introduction'
-      docx.hr
-      docx.h2 'Overview'
-      docx.p 'Caracal is a pure Ruby library for generating dynamic Microsoft Word documents. While the library does not support the entire Open XML specification, most common Word features are available.'
-      docx.p
-      docx.p 'Major features include:'
+
+     # docx.img 'https://hk2-startup.de/wp-content/uploads/2014/11/HK2_LOGO_300dpi.jpg', width: 100, height: 150
+     docx.h2 'Technische und Organisatorische Maßnahmen nach Art. 32 DSGVO'
+     Answer.find(@agreement.answer_ids).each do |a|
+      docx.p a.sentence
+    end
+      # docx.h2 @agreement.answer_ids
+      # raise
     end
 
     UserMailer.report("." + file).deliver_now

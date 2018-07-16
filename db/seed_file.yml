@@ -1,0 +1,23 @@
+questions:
+  - title: "Verschlüssung?"
+  - title: "Verschlüsung von welchen Geräten?"
+  - title: "Frage Nummer 3"
+  - title: "Frage Nummer 4"
+
+    
+answers:
+  - question_id: 1
+    title: "125" 
+    sentence: "in this comapny was used 125 verschlüssung"
+  - question_id: 1
+    title: "256"
+    sentence: "in this comapny was used 256 verschlüssung"
+  - question_id: 1
+    title: "keine"
+    sentence: "aKEINE VERSCHLÜSSUNG"
+  - question_id: 2
+    title: "Handy"
+    sentence: "In /firma/ würden Hnady mit /verschlüssung/ verschlüsselt"
+  - question_id: 3
+    title: "Anstwort 1 to Question 3"
+    sentence: "Anstwort 1 to Question 3 - Satz zum ergänzen"

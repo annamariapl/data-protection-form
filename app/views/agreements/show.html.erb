@@ -1,9 +1,13 @@
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <% @agreement.answers.each do |a| %>
-        <p><%= a.sentence %></p>
-        <% end %>
-      </div>
-    </div>
+  	<div class="row">
+  		<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+  			<% @agreement.answers.each do |a| %>
+  			<p><%= a.sentence %></p>
+  			<% end %>
+  			<div> <h2>HIER WIRD BERWERTUNG :</h2>
+  				<p>Punkte? Mit M.H.</p>
+  				<p>email  wurde versandt</p>
+  			</div>
+  		</div>
+  	</div>
   </div>
