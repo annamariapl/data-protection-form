@@ -18,7 +18,8 @@
             <% @agreement_template.questions.each do |quest| %>
             <% if chapter.id == quest.chapter_id %>
             <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
-            <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes %>
+            <p class="show-on-hover"><%= quest.description %></p>
+            <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%>
             <% end %>
             <% end %>
             <% end %>

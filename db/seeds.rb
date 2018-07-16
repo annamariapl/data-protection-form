@@ -93,7 +93,7 @@ puts "Chapters created (from an array in --- seed.rb)"
 puts 'Creating questions...'
 # questions = {}
 sample["questions"].each do |question|
-	q = Question.create! question.slice("title", "chapter_id").merge(agreement_template: template)
+	q = Question.create! question.slice("title", "chapter_id", "description").merge(agreement_template: template)
 	puts 'Creating answers'
 	sample["answers"].each do |answer|
 		if q.id == answer.first.second

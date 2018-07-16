@@ -4,6 +4,8 @@
 questions:
   - title: "Verschlüsselung Datenbank"
     chapter_id: 1
+    description: |
+      Einsatz einer verschlüsselbaren Datenbank, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann.
   - title: "Verschlüsselung mobile Endgeräte"
     chapter_id: 1
   - title: "Transport Verschlüsselung"
