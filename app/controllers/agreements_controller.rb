@@ -40,7 +40,7 @@ class AgreementsController < ApplicationController
       end
       docx.p Date.today.strftime('%B %d, %Y'), color: '666666', align: :right
       docx.h3 "Kontaktdaten"
-      docx.p "Firma: #{@agreement.comapny}"
+      docx.p "Firma: #{@agreement.company}"
       docx.p "Telefon: #{@agreement.phone}"
       docx.p "Mail: #{@agreement.mail}"
       docx.p "Vertragtitel: #{@agreement.name}"
@@ -79,7 +79,6 @@ class AgreementsController < ApplicationController
 
       docx.h2 'Technische und Organisatorische Maßnahmen nach Art. 32 DSGVO'
       docx.h3 "Verschlüsselung und Pseudonymisierung personenbezogener Daten"
-      raise
       docx.p
     # raise
     #
