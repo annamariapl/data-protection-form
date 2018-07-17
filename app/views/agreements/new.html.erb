@@ -8,7 +8,7 @@
         <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
         <%= f.input :phone, label: false, placeholder: "Telefonnumer" %>
         <%= f.input :mail, label: false, placeholder: "E-mail" %>
-        <%= f.input :comapny, label: false, placeholder: "Ihre Firma" %>
+        <%= f.input :company, label: false, placeholder: "Ihre Firma" %>
       </div>
     </div>
     <br>
@@ -18,7 +18,7 @@
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <h3>Technische und organisatorische Maßnahmen nach Art. 32 DSGVO</h3>
         <br>
-        <%= f.simple_fields_for :agreement_answer do |chosen_answers| %>
+        <%= f.simple_fields_for :agreement_answer do |ff| %>
         <% @chapters.each do |chapter| %>
         <h4 class="chapter-title"> <!-- <#%= chapter.id %> - --> <%= chapter.title %></h4>
         <p class="chapter-unter_titel"><%= chapter.unter_titel %></p>
@@ -26,7 +26,11 @@
         <% if chapter.id == quest.chapter_id %> <!-- isnt it better to put this logic in seeds?? to keep things nice in db. a not in the view!!! -->
         <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
         <p class="show-on-hover question-descripton"><%= quest.description %></p>
-        <p class="check-boxes"> <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%></p>
+
+
+        <p class="check-boxes"> <%= ff.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%></p>
+
+
         <% end %>
         <% end %>
         <% end %>
