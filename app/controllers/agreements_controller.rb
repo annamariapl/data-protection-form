@@ -30,8 +30,22 @@ class AgreementsController < ApplicationController
     Caracal::Document.save(file) do |docx|
 
      docx.img 'https://hk2-startup.de/wp-content/uploads/2014/11/HK2_LOGO_300dpi.jpg', width: 100, height: 150
-     docx.h2 'Technische und Organisatorische Maßnahmen nach Art. 32 DSGVO'
-     Answer.find(@agreement.answer_ids).each do |a|
+     4.times do 
+      docx.p
+    end
+    docx.p Date.today.strftime('%B %d, %Y'), color: '666666', align: :right
+    docx.h3 "Kontaktdaten"
+    docx.p "Firma: #{@agreement.comapny}"
+    docx.p "Telefon: #{@agreement.phone}"
+    docx.p "Mail: #{@agreement.mail}"
+    docx.p "Vertrag: #{@agreement.name}"
+
+    5.times do 
+      docx.p
+    end
+
+    docx.h2 'Technische und Organisatorische Maßnahmen nach Art. 32 DSGVO'
+    Answer.find(@agreement.answer_ids).each do |a|
       docx.p a.sentence
     end
     # docx.h2 @agreement.answer_ids
@@ -44,7 +58,7 @@ class AgreementsController < ApplicationController
   private
 
   def agreement_params
-    params.require(:agreement).permit(:name)
+    params.require(:agreement).permit(:name, :phone, :mail, :comapny)
   end
 
 end
