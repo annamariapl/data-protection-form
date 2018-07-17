@@ -8,10 +8,28 @@ questions:
       Einsatz einer verschlüsselbaren Datenbank, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann.
   - title: "Verschlüsselung mobile Endgeräte"
     chapter_id: 1
+    description: |
+      Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt.
   - title: "Transport Verschlüsselung"
     chapter_id: 1
+    description: |
+      TLS-Verschlüsselung für Webseiten, VON für Serverzugriffe.
   - title: "Pseudonymisierung"
     chapter_id: 1
+    description: |
+      Die Verarbeitung personenbezogener Daten erfolgt in einer Weise, dass die Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person  zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und entsprechenden technischen und organisatorischen Maßnahmen unterliegen; z.B. durch Ersetzen der persönlichen Identifikationsmerkmale durch Codes, getrennte Speicherung von Identifikationsmerkmalen und Codes; Das Verfahren der Pseudonymisierung bitte kurz verständlich darstellen:
+  - title: "Verschlüsselung Datenbank"
+    chapter_id: 1
+    description: |
+      Einsatz einer verschlüsselbaren Datenbank, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann.
+  - title: "Verschlüsselung mobile Endgeräte"
+    chapter_id: 1
+    description: |
+      Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt.
+  - title: "Transport Verschlüsselung"
+    chapter_id: 1
+    description: |
+      TLS-Verschlüsselung für Webseiten, VON für Serverzugriffe.
 
 
 answers:
