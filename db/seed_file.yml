@@ -5,51 +5,55 @@ questions:
   - title: "Verschlüsselung Datenbank"
     chapter_id: 1
     description: |
-      Einsatz einer verschlüsselbaren Datenbank, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann.
-  - title: "Verschlüsselung mobile Endgeräte"
+      Welche Art der Verschlüsselung wird in Ihre Firma genutzt?
+  - title: "Welche mobile Endgeräte wurden verschlüsselt?"
     chapter_id: 1
     description: |
-      Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt.
+      Platz für zusätzliche erläuterung.
   - title: "Transport Verschlüsselung"
     chapter_id: 1
     description: |
-      TLS-Verschlüsselung für Webseiten, VON für Serverzugriffe.
+      Platz für zusätzliche erläuterung.
   - title: "Pseudonymisierung"
     chapter_id: 1
     description: |
-      Die Verarbeitung personenbezogener Daten erfolgt in einer Weise, dass die Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person  zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und entsprechenden technischen und organisatorischen Maßnahmen unterliegen; z.B. durch Ersetzen der persönlichen Identifikationsmerkmale durch Codes, getrennte Speicherung von Identifikationsmerkmalen und Codes; Das Verfahren der Pseudonymisierung bitte kurz verständlich darstellen:
-  - title: "Verschlüsselung Datenbank"
-    chapter_id: 1
-    description: |
-      Einsatz einer verschlüsselbaren Datenbank, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann.
-  - title: "Verschlüsselung mobile Endgeräte"
-    chapter_id: 1
-    description: |
-      Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt.
-  - title: "Transport Verschlüsselung"
-    chapter_id: 1
-    description: |
-      TLS-Verschlüsselung für Webseiten, VON für Serverzugriffe.
-
+      Platz für zusätzliche erläuterung.
 
 answers:
   - question_id: 1
-    title: "125"
-    sentence: "in this comapny was used 125 verschlüssung"
+    title: "125 Bit"
+    sentence: "Einsatz einer verschlüsselbaren Datenbank 125 Bit, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann."
     pointing: 0
   - question_id: 1
-    title: "256"
-    sentence: "in this comapny was used 256 verschlüssung"
+    title: "256 Bit"
+    sentence: "Einsatz einer verschlüsselbaren Datenbank 256 Bit, die auf symmetrische und/oder asymmetrische Verschlüsselungsverfahren zurückgreifen kann."
     pointing: 2
   - question_id: 1
-    title: "keine"
-    sentence: "aKEINE VERSCHLÜSSUNG"
+    title: "keine Verschlüsselung des Datenbanks"
+    sentence: "Es würde keine Datenbank Verschlüsselung angewendet."
     pointing: -3
   - question_id: 2
-    title: "Handy"
-    sentence: "In /firma/ würden Hnady mit /verschlüssung/ verschlüsselt"
+    title: "Handy's"
+    sentence: "Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt."
+    pointing: 0
+  - question_id: 2
+    title: "PC's"
+    sentence: "Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt."
+    pointing: 0
+  - question_id: 2
+    title: "Laptops"
+    sentence: "Bei allen mobilen Endgeräten, die personenbezogene Daten enthalten können, sind die Speichermedien verschlüsselt."
     pointing: 0
   - question_id: 3
-    title: "Anstwort 1 to Question 3"
-    sentence: "Anstwort 1 to Question 3 - Satz zum ergänzen"
-    pointing: 1
+    title: "TLS-Verschlüsselung für Webseiten"
+    sentence: "TLS-Verschlüsselung für Webseiten"
+    pointing: 0
+  - question_id: 3
+    title: "TLS-Verschlüsselung für Webseiten"
+    sentence: "VON für Servierzugriffe."
+    pointing: 0
+  - question_id: 4
+    title: "ja"
+    sentence: "Pseudonymisierung."
+    pointing: 0
+    

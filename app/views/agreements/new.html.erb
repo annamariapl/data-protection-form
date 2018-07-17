@@ -25,14 +25,14 @@
         <% @agreement_template.questions.each do |quest| %>
         <% if chapter.id == quest.chapter_id %> <!-- isnt it better to put this logic in seeds?? to keep things nice in db. a not in the view!!! -->
         <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
-        <p class="show-on-hover"><%= quest.description %></p>
-        <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%>
+        <p class="show-on-hover question-descripton"><%= quest.description %></p>
+        <p class="check-boxes"> <%= chosen_answers.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%></p>
         <% end %>
         <% end %>
         <% end %>
         <% end %>
 
-        <%= f.submit "CLICK - TOM überprüfen", class: "btn btn-danger" %>
+        <%= f.submit "CLICK - TOM überprüfen", class: "btn btn-danger button-big custom-white-button" %>
         <% end %>
       </div>
     </div>
