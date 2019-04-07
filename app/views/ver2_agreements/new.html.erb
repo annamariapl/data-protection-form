@@ -1,0 +1,60 @@
+ <div class="agreement-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h3>Ihre Kontaktdaten</h3>
+        <br>
+        <!-- START -->
+        <%= simple_form_for [@agreement_template, @agreement] do |f| %>
+        <%= f.input :name, label: false, placeholder: "Name des Vertrages" %>
+        <%= f.input :phone, label: false, placeholder: "Telefonnumer" %>
+        <%= f.input :mail, label: false, placeholder: "E-mail" %>
+        <%= f.input :company, label: false, placeholder: "Ihre Firma" %>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h3>Technische und organisatorische Maßnahmen nach Art. 32 DSGVO</h3>
+        <br>
+        <%= f.simple_fields_for :agreement_answer do |ff| %>
+        <% @chapters.each do |chapter| %>
+        <!-- DISPLAY CHAPTER & QUESTIONS -->
+        <h4 class="chapter-title">
+          <%= chapter.title %>
+        </h4>
+        <p class="chapter-unter_titel">
+          <%= chapter.unter_titel %>
+        </p>
+        <% @agreement_template.questions.each do |quest| %>
+        <% if chapter.id == quest.chapter_id %> <!-- isnt it better to put this logic in seeds?? to keep things nice in db. a not in the view!!! -->
+        <h5 class="question-title">
+          <%= quest.id %> - <%= quest.title %>
+        </h5>
+        <p class="show-on-hover question-descripton">
+          <%= quest.description %>
+        </p>
+        <p class="check-boxes">
+          <%= ff.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%>
+        </p>
+        <% quest.answers.each do |displayed_answer| %> <!-- later: diplay only fields that have details boolan column?with default "false"-->
+        <p class="details-to-checkboxes">
+          <%= ff.input :answers, label_text: false, label: false, placeholder: "datails to answer: #{displayed_answer.title}"%>
+        </p>
+        <% end %>
+        <%= ff.input :additional_answer, label_text: false, label: false, placeholder: "Hier weitere Maßnahmen einfügen, falls vorhanden" %>
+        <% end %>
+        <% end %>
+        <% end %>
+        <% end %>
+        <%= f.submit "CLICK - TOM überprüfen", class: "btn btn-danger button-big custom-white-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
