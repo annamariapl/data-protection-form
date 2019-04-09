@@ -34,7 +34,7 @@ class AgreementsController < ApplicationController
 
     Caracal::Document.save(file) do |docx|
 
-      docx.img 'https://hk2-startup.de/wp-content/uploads/2014/11/HK2_LOGO_300dpi.jpg', width: 100, height: 150
+      docx.img 'app/assets/images/logo.png', width: 100, height: 150
       4.times do
         docx.p
       end

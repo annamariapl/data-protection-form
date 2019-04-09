@@ -8,17 +8,30 @@
   		</div>
   	</div>
   </div> -->
- <div class="agreement-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <% max_score = 12 %>
-        <% sum = @agreement.answers.sum(:pointing) %>
-        <% display_percent_sum = (sum*100)/max_score %>
-        <div class="display-percentage"><%= display_percent_sum %> % </div>
-        <p> Die Maßnahmen erfüllen Standarten in <%= display_percent_sum %> % </p>
-        <p> Wir beraten sie gerne: <%= mail_to "annamaria.wojtyga@gmail.com", name = "Schrieben Sie uns eine Email", subject:"hk2 - TOM : firma:", body:"Bitte um Kontakt wegen AV, TOM Anlage. <br> Name <br> Telefon" %></p>
+  <div class="agreement-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <% max_score = 12 %>
+          <% sum = @agreement.answers.sum(:pointing) %>
+          <% display_percent_sum = (sum*100)/max_score %>
+          <div class="display-percentage"><h1><%= display_percent_sum %>&nbsp;% </h1>
+            <p> Die&nbsp;Maßnahmen erfüllen Standarten in&nbsp;<%= display_percent_sum %>&nbsp;% </p>
+          </div>
+          <p> Wir beraten sie gerne: <%= mail_to "annamaria.wojtyga@gmail.com", name = "Schrieben Sie uns eine Email", subject:"hk2 - TOM : firma:", body:"Bitte um Kontakt wegen AV, TOM Anlage. <br> Name <br> Telefon" %></p>
+        </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="disclaimer-box">
+            <p class="disclaimer-text">
+              !!! This App has just created a .docx and send it per E-Mail. 
+              The .docx was saved in /tmp/ folder !!!
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>

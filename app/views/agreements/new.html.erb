@@ -1,5 +1,35 @@
  <div class="agreement-container">
   <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="disclaimer-box">
+
+            <h3> This Demo Version does not contain any data that could harm know how in any way. </h3>
+
+            <h4 class="disclaimer-header"> This Demo Version of the App DOES </h4>
+            <p class="disclaimer-text">
+                <ul>
+                    <li> collect data from User </li>
+                    <li> creates an .docx with this data (variables that can be manipulated) </li>
+                    <li> sends an E-Mail with the .docx to the responsible co-worker 
+                        <br><strong>not to the App-User!</strong> (do not wait for E-Mail)</li>
+                    </ul>
+                </p>
+
+                <h4 class="disclaimer-header"> This Demo Version of the App DOES NOT </h4>
+                <p class="disclaimer-text">
+                    <ul>
+                        <li> consume real & complete data</li>
+                        <li> apply real calculation algorithm to estimate if TOMs are enough (placeholder) </li>
+                        <li> create the the real, formated document (however you can see that the variables can be manipulated) </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <h3>Ihre Kontaktdaten</h3>
@@ -9,38 +39,42 @@
         <%= f.input :phone, label: false, placeholder: "Telefonnumer" %>
         <%= f.input :mail, label: false, placeholder: "E-mail" %>
         <%= f.input :company, label: false, placeholder: "Ihre Firma" %>
-      </div>
     </div>
+</div>
+
+
+
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <h3>Technische und organisatorische Maßnahmen nach Art. 32 DSGVO</h3>
     <br>
-    <br>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <h3>Technische und organisatorische Maßnahmen nach Art. 32 DSGVO</h3>
-        <br>
-        <%= f.simple_fields_for :agreement_answer do |ff| %>
-        <% @chapters.each do |chapter| %>
-        <h4 class="chapter-title"> <!-- <#%= chapter.id %> - --> <%= chapter.title %></h4>
-        <p class="chapter-unter_titel"><%= chapter.unter_titel %></p>
-        <% @agreement_template.questions.each do |quest| %>
-        <% if chapter.id == quest.chapter_id %> <!-- isnt it better to put this logic in seeds?? to keep things nice in db. a not in the view!!! -->
-        <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
-        <p class="show-on-hover question-descripton"><%= quest.description %></p>
+    <%= f.simple_fields_for :agreement_answer do |ff| %>
+    <% @chapters.each do |chapter| %>
+    <h4 class="chapter-title"> <!-- <#%= chapter.id %> - --> <%= chapter.title %></h4>
+    <p class="chapter-unter_titel"><%= chapter.unter_titel %></p>
+    <% @agreement_template.questions.each do |quest| %>
+    <% if chapter.id == quest.chapter_id %> <!-- isnt it better to put this logic in seeds?? to keep things nice in db. a not in the view!!! -->
+    <h5 class="question-title"> <%= quest.id %> - <%= quest.title %></h5>
+    <p class="show-on-hover question-descripton"><%= quest.description %></p>
 
 
-        <p class="check-boxes"> <%= ff.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%></p>
+    <p class="check-boxes"> <%= ff.input :answer, label_text: false, collection: quest.answers, as: :check_boxes%></p>
 
 
-        <% end %>
-        <% end %>
-        <% end %>
-        <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
 
-        <%= f.submit "CLICK - TOM überprüfen", class: "btn btn-danger button-big custom-white-button" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+    <%= f.submit "CLICK - TOM überprüfen", class: "btn btn-danger button-big custom-white-button" %>
+    <% end %>
+</div>
+</div>
+</div>
 </div>
 
 
